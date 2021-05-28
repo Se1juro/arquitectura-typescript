@@ -17,7 +17,7 @@ const app: express.Application = createExpressServer({
     credentials: true,
   },
   middlewares: [resolve(__dirname, "./middlewares/*{.ts,.js}")],
-  controllers: [resolve(__dirname, "./controllers/*{.ts,.js}")], // we specify controllers we want to use
+  controllers: [resolve(__dirname, "./controllers/*{.ts,.js}")],
 });
 
 app.use(express.json({ limit: "10mb" }));
