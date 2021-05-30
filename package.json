@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "ts-node --files src/server/bin.ts",
+    "start": " node ./dist/server/bin.js",
+    "start-dev": "ts-node --files src/server/bin.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint -p tsconfig.json",
     "dev": "nodemon ./src/server/bin.ts"
@@ -14,6 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "body-parser": "^1.19.0",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
@@ -55,7 +58,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "npm run remove:build && npm run lin && npm run build && pretty-quick --staged",
+      "pre-push":"npm run remove:build && npm run lint && npm run build"
     }
   }
 }
