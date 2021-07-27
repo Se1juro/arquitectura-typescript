@@ -15,7 +15,7 @@ module.exports = [
     migrations: [resolve(__dirname, "src/migrations/*{.ts,.js}")],
     subscribers: [resolve(__dirname, "src/migrations/*{.ts,.js}")],
   },
-  {
+  /* {
     name: "collections",
     type: process.env.DATABASE_COLLECTIONS_TYPE,
     url: process.env.DATABASE_COLLECTIONS_URL,
@@ -29,5 +29,5 @@ module.exports = [
       authSource: "admin",
     },
     entities: [resolve(__dirname, process.env.TYPEORM_ENTITIES)],
-  },
+  }, */
 ];

@@ -4,8 +4,6 @@ import express from "express";
 import morgan from "morgan";
 import { resolve } from "path";
 import { createExpressServer, Action } from "routing-controllers";
-import { LOG_FORMAT } from "./constants/envinronments.constant";
-import { createConnection } from "typeorm";
 
 dotenv.config({ path: resolve(__dirname, "../.env") });
 const app: express.Application = createExpressServer({

@@ -1,8 +1,7 @@
 import morgan from "morgan";
-import { ConnectionOptionsReader, createConnections } from "typeorm";
+import { createConnection } from "typeorm";
 import app from "../app";
 import { LOG_FORMAT } from "../constants/envinronments.constant"
-import { ConnectionOptions } from "typeorm/connection/ConnectionOptions";
 
 export default class Server {
   public port: number;
@@ -21,7 +20,6 @@ export default class Server {
       .catch((err) => console.error(err));
   }
   private async connect() {
-        return await createConnection();
-
+    return await createConnection();
   }
 }
