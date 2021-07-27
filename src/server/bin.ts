@@ -21,8 +21,6 @@ export default class Server {
       .catch((err) => console.error(err));
   }
   private async connect() {
-    /* const typeOrmConfig: ConnectionOptionsReader = new ConnectionOptionsReader();
-    const connectionOptions: ConnectionOptions[] = await typeOrmConfig.all();
-    return createConnections(connectionOptions); */
+        return await createConnection();
   }
 }
